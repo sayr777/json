@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=cp-1251">
+    <meta charset="cp-1251">
+    <title>Меркурий 230</title>
+
+</head>
+<link href="ard.css" rel="Stylesheet"" type="text/css" />
+
+<body onload="init()" style="background-color:black" >
+<div>
+<canvas id='serNum' width='30' height='200'></canvas>
+<canvas id='Error_1' width='30' height='200'></canvas>
+<canvas id='Error_2' width='30' height='200'></canvas>
+
+<table    align=left class="corners">
+<tbody>
+
+
+<tr>
+<td >Наименование</td>
+<td >Сумма</td>
+<td >Фаза А</td>
+<td >Фаза В</td>
+<td >Фаза С</td>
+
+
+</tr>
+       
+
+<tr>
+<td >Тариф Сумма</td>
+<td id='Energy_0_0'></td>
+<td id='Energy_0_1'></td>
+<td id='Energy_0_2'></td>
+<td id='Energy_0_3'></td>
+
+
+</tr>
+
+<tr>
+<td >Тариф 1</td>
+<td id='Energy_1_0'></td>
+<td id='Energy_1_1'></td>
+<td id='Energy_1_2'></td>
+<td id='Energy_1_3'></td>
+</tr>
+<tr>
+<td >Тариф 2</td>
+<td id='Energy_2_0'></td>
+<td id='Energy_2_1'></td>
+<td id='Energy_2_2'></td>
+<td id='Energy_2_3'></td>
+</tr>
+<tr>
+<td >Тариф 3</td>
+<td id='Energy_3_0'></td>
+<td id='Energy_3_1'></td>
+<td id='Energy_3_2'></td>
+<td id='Energy_3_3'></td>
+</tr>
+<tr>
+<td >Тариф 4</td>
+<td id='Energy_4_0'></td>
+<td id='Energy_4_1'></td>
+<td id='Energy_4_2'></td>
+<td id='Energy_4_3'></td>
+</tr>
+
+<tr>
+<td >Ток А</td>
+<td ></td>
+<td id='current_1'></td>
+<td id='current_2'></td>
+<td id='current_3'></td>
+
+
+</tr>
+<tr>
+<td >Напряжение B</td>
+<td ></td>
+<td id='suply_1'></td>
+<td id='suply_2'></td>
+<td id='suply_3'></td>
+
+</tr>
+<tr>
+
+<td >Мощность Р Вт</td>
+<td id='powerP_0'></td>
+<td id='powerP_1'></td>
+<td id='powerP_2'></td>
+<td id='powerP_3'></td>
+
+</tr>
+<tr>
+<td >Мощность Q Вт</td>
+<td id='powerQ_0'></td>
+<td id='powerQ_1'></td>
+<td id='powerQ_2'></td>
+<td id='powerQ_3'></td>
+
+</tr>
+<tr>
+<td >Мощность S Вт</td>
+<td id='powerS_0'></td>
+<td id='powerS_1'></td>
+<td id='powerS_2'></td>
+<td id='powerS_3'></td>
+
+</tr>
+<tr>
+<td >cos F</td>
+<td id='cos_F_0'></td>
+<td id='cos_F_1'></td>
+<td id='cos_F_2'></td>
+<td id='cos_F_3'></td>
+
+</tr>
+<tr>
+<td >Частота Гц</td>
+<td id='freq'></td>
+<td ></td>
+<td ></td>
+<td ></td>
+
+</tr>
+<tr>
+<td >Угол Град</td>
+<td ></td>
+<td id='Angle_1'></td>
+<td id='Angle_2'></td>
+<td id='Angle_3'></td>
+
+</tr>
+
+
+</tbody>
+</table>
+</div>
+Req: <span id="recv"></span> 
+
+
+<script src="tween-min.js"></script>
+<script src="steelseries-min.js"></script>
+<script src="unit_43.js"></script>
+
+</body></html>

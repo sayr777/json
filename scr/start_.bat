@@ -1,0 +1,8 @@
+rem Скрипт создан в программе 'ScadaPy Конфигуратор сервера v.3.11'
+rem Название сервера ''
+rem Slave адрес ''
+rem Slave порт ''
+rem Тип master '---'
+rem Тип slave '---'
+rem Интерфейс tty ''
+rem Скорость tty ''

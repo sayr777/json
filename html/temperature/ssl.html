@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Temperature Sensor</title>
+
+</head>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+
+
+         var resp=50;
+
+
+  function getTemp() 
+{
+         var dataReq='temp_sensor';
+      //   var resp=50;
+         if (window.XMLHttpRequest) {  xmlhttp=new XMLHttpRequest();                        }
+         else                       {  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");      }
+
+          xmlhttp.open("GET","http://192.168.0.156:8080/"+dataReq,true);
+          xmlhttp.send(null);
+
+          xmlhttp.onreadystatechange=function()
+
+        {
+               if (xmlhttp.readyState==4 && xmlhttp.status==200)
+             {
+           
+              resp= xmlhttp.responseText;
+              parseResp=JSON.parse(resp);
+              data=parseResp.temp_sensor[0][0];
+              resp = data.Temper_1.Val[0]*0.1;
+    //          return resp;
+              }
+              
+  //        return resp;
+        }
+
+//    return resp;
+ }
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Temp', 100],
+          ['Temp', 100],
+          ['Temp', 110]
+        ]);
+
+        var options = 
+
+{
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() 
+       {
+
+
+//                         data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+                         d=getTemp();
+                         data.setValue(0, 1, resp);
+                         chart.draw(data, options);
+
+
+
+        }, 1000);
+
+
+        setInterval(function() { 
+          data.setValue(1, 1, resp);
+          chart.draw(data, options);
+        }, 1000);
+        setInterval(function() {
+          data.setValue(2, 1, resp );
+          chart.draw(data, options);
+        }, 1000);
+   }
+    </script>
+
+
+
+<link href="ard.css" rel="Stylesheet"" type="text/css" />
+<body onload="init()" style="background-color:black" >
+<div>
+<table  class="corners"  align= center>
+<tbody>
+
+
+<tr>
+<td align= center  c class="tcenter"><canvas id='sound' width='200' height='200'></canvas></td>
+<td   class="tcenter"><canvas id='current' width='300' height='300'></canvas></td>
+<td  class="tcenter"><canvas id='voltmetr' width='300' height='300'></canvas></td>
+<td class="tcenter"><canvas id='light' width='300' height='300'></canvas></td>
+<td class="tcenter"><canvas id='tempmeter' width='300' height='300'></canvas></td>  
+<td class="tcenter"><canvas id="canvasClock1"  width='200' height='200' ></canvas></td> 
+</tr>
+
+<tr>   
+<td align= center class="tcenter"> <canvas id='lcd1' width='30' height='200'></canvas></td>
+<td align= center class="tcenter"> <canvas id='lcd3' width='30' height='200'></canvas></td> 
+<td align= center class="tcenter"> <canvas id='lcd2' width='30' height='200'></canvas> </td>  
+<td align= center class="tcenter"> <canvas id='lcd4' width='30' height='200'></canvas> </td> 
+<td align= center class="tcenter"> <canvas id='txtled' width='30' height='200'></canvas> </td> 
+<td align= center class="tcenter"> <canvas id='lcd5' width='30' height='200'></canvas> </td> 
+</tr>   
+
+</tbody>
+</table>
+</div>
+
+<br>
+
+<table    class="corners"  align= center>
+<tr>
+<td><textarea rows="16" cols="40" name="text" color=red id="monitor" ></textarea> 
+<canvas id="move"  width='80' height='200' ></canvas>
+</td>    
+<td>
+    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+
+</td>
+</tr>
+</table>
+
+Req: <span id="recv"></span> 
+
+<script src="ssl.js"></script>
+<script src="tween-min.js"></script>
+<script src="steelseries-min.js"></script>
+</body></html>

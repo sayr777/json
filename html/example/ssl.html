@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Temperature Sensor</title>
+
+</head>
+ 
+
+<link href="ard.css" rel="Stylesheet"" type="text/css" />
+<body onload="init()" style="background-color:black" >
+<div>
+<table  class="corners"  align= center>
+<tbody>
+
+
+<tr>
+<td align= center  c class="tcenter"><canvas id='sound' width='200' height='200'></canvas></td>
+<td   class="tcenter"><canvas id='current' width='300' height='300'></canvas></td>
+<td  class="tcenter"><canvas id='voltmetr' width='300' height='300'></canvas></td>
+<td class="tcenter"><canvas id='light' width='300' height='300'></canvas></td>
+<td class="tcenter"><canvas id='tempmeter' width='300' height='300'></canvas></td>  
+<td class="tcenter"><canvas id="canvasClock1"  width='200' height='200' ></canvas></td> 
+</tr>
+
+<tr>   
+<td align= center class="tcenter"> <canvas id='lcd1' width='30' height='200'></canvas></td>
+<td align= center class="tcenter"> <canvas id='lcd3' width='30' height='200'></canvas></td> 
+<td align= center class="tcenter"> <canvas id='lcd2' width='30' height='200'></canvas> </td>  
+<td align= center class="tcenter"> <canvas id='lcd4' width='30' height='200'></canvas> </td> 
+<td align= center class="tcenter"> <canvas id='txtled' width='30' height='200'></canvas> </td> 
+<td align= center class="tcenter"> <canvas id='lcd5' width='30' height='200'></canvas> </td> 
+</tr>   
+
+</tbody>
+</table>
+</div>
+
+<br>
+
+<table    class="corners"  align= center>
+<tr>
+<td><textarea rows="16" cols="40" name="text" color=red id="monitor" ></textarea> 
+<canvas id="move"  width='80' height='200' ></canvas>
+</td>    
+<td>
+    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+
+</td>
+</tr>
+</table>
+
+Req: <span id="recv"></span> 
+
+<script src="ssl.js"></script>
+<script src="tween-min.js"></script>
+<script src="steelseries-min.js"></script>
+</body></html>
